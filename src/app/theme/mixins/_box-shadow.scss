@@ -1,0 +1,13 @@
+@mixin box-shadow($left:0, $top:0, $blur:4px, $spread: 0, $color:#ccc, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow: inset $left $top $blur $spread $color;
+      -moz-box-shadow: inset $left $top $blur $spread $color;
+      box-shadow: inset $left $top $blur $spread $color;
+    }
+  
+    @else {
+      -webkit-box-shadow: $left $top $blur $spread $color;
+      -moz-box-shadow: $left $top $blur $spread $color;
+      box-shadow: $left $top $blur $spread $color;
+    }
+  }

@@ -1,0 +1,20 @@
+<div class="unit-detail-base">
+    <div class="page-header">
+        <a [routerLink]="['/units']"><i class="pi pi-arrow-left"></i> Back to Units</a>
+    </div>
+    <div *ngIf="isLoading">Loading Please Wait...</div>
+    <div *ngIf="!!unitDetail; else noUnit" class="unit-detail-base">
+        <div class="details">
+            <div class="name">{{this.unitDetail.id}}. {{this.unitDetail.name}} </div>
+            <div class="desc">{{this.unitDetail.description}}</div>
+            <div *ngFor="let feat of featureKeys" class="feature-item">
+                <div class="feat-name">{{feat.title}}</div>
+                <div class="feat-value">{{ feat.key === 'cost' ? getCosts() : getDetailValueFor(feat.key) }}</div>
+            </div>
+        </div>
+        <div class="image"></div>
+    </div>
+    <ng-template #noUnit>
+        <div class="page-error">No Unit Detail Found</div>
+    </ng-template>
+</div>

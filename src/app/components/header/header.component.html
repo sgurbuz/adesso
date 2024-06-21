@@ -1,0 +1,9 @@
+<header class="app-header{{!appService.isAtHome ? ' sub-page-header': ''}}">
+    <div class="logo">
+        <img [src]="getLogo()" alt="Age of Empires Units" />
+    </div>
+    <div class="nav">
+        <a [routerLink]="['/']" class="{{appService.isAtHome ? 'activated' : ''}}"><i class="pi pi-home" style="font-size: 1rem"></i></a>
+        <a [routerLink]="['/units']"  class="{{appService.isAtHome ? '' : 'activated'}}">Units</a>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+<div class="app-layout">
+  <div class="app-bg-base{{!appService.isAtHome ? ' sub-page-bg': ''}}" [attr.style]="getBgCreative()"></div>
+  <app-header></app-header>
+  <div *ngIf="appService.isAtHome" class="home-content-base">
+    <app-home></app-home>
+  </div>
+  <div class="router-base{{!appService.isAtHome ? ' sub-page': ''}}">
+    <div class="outlet-container">
+      <router-outlet />
+    </div>
+  </div>
+</div>

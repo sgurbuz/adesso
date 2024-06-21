@@ -1,0 +1,56 @@
+@import '../../theme/colors';
+
+:host {
+    .unit-detail-base {
+        min-height: calc(100vh - 250px);
+
+        .page-header {
+            padding: 8px 0 16px 0;
+            border-bottom: 1px solid rgba($color: $black, $alpha: 0.25);
+            margin-bottom: 16px;
+
+            a {
+                color: $black;
+                text-decoration: none;
+
+                i {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .details {
+            .name {
+                font-size: 48px;
+                font-weight: 200;
+                padding-bottom: 8px;
+            }
+
+            .desc {
+                padding: 0 0 16px 0;
+                font-size: 24px;
+            }
+
+            .feature-item {
+                padding: 8px 0 8px 28px;
+                margin: 8px 0;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+
+                .feat-name {
+                    width: 200px;
+                    font-weight: bold;
+                }
+
+                .feat-value {
+                    &::before {
+                        content: ': ';
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

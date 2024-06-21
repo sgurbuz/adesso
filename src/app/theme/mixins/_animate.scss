@@ -1,0 +1,4 @@
+@mixin animate( $event: all, $time:0.1s, $animate:linear) {
+    transition: $event $time $animate;
+}
+  

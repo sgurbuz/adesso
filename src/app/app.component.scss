@@ -1,0 +1,64 @@
+@import './theme/colors';
+@import './theme/sizes';
+@import './theme/mixins/animate';
+
+:host {
+    .app-layout {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        background: $black;
+
+        .app-bg-base {
+            @include animate();
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
+
+            &.sub-page-bg {
+                height: 35vh;
+                opacity: 0.85;
+            }
+        }
+
+        .home-content-base {
+            position: absolute;
+            left: 0;
+            bottom: 16px;
+            z-index: 1;
+            width: 100vw;
+        }
+
+        .router-base {
+            @include animate();
+
+            position: relative;
+            z-index: 1;
+            height: 0;
+            overflow: hidden;
+            background-color:transparent;
+            margin-top: 148px;
+
+            &.sub-page {
+                background-color: rgba(249, 248, 248, 0.95);
+                height: auto;
+                backdrop-filter: blur(8px);
+                overflow: auto;
+                padding: 16px 0;
+
+                .outlet-container {
+                    width: $container-width;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

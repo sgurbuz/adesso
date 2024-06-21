@@ -1,0 +1,30 @@
+@import '../../theme/colors';
+@import '../../theme/mixins/animate';
+@import '../../theme/mixins/box-shadow';
+
+:host {
+    .list-base {
+        padding-bottom: 16px;
+
+        .list-header {
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba($color: $black, $alpha: .15);
+            margin-bottom: 8px;
+        }
+
+        .list-item {
+            @include animate();
+
+            padding: 12px 0;
+            cursor: pointer;
+
+            &:hover {
+                @include box-shadow(0, 0, 8px, 0, rgba(30, 32, 25, 0.35), false);
+
+                background-color: rgba($color: $black, $alpha: 0.05);
+            }
+        }
+    }
+}

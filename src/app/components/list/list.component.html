@@ -1,0 +1,24 @@
+<div class="list-base">
+    <div class="list-header flex flex-row w-full">
+        <div class="id w-1 text-center">ID</div>
+        <div class="name w-3">Name</div>
+        <div class="name w-4">Min. Required Age</div>
+        <div class="costs w-4">Costs</div>
+    </div>
+    <div *ngFor="let item of list()" [routerLink]="['/units', item.id]" class="list-item flex flex-row w-full">
+        <div class="id w-1 text-center">{{item.id}}</div>
+        <div class="name w-3">{{item.name}}</div>
+        <div class="age w-4">{{item.age}}</div>
+        <div *ngIf="!!item.cost; else noCosts" class="costs w-4">
+            {{ getCostsFor(item.cost)}}
+        </div>
+        <ng-template #noCosts>
+            <div class="costs w-4">-</div>
+        </ng-template>
+    </div>
+</div>
+<ng-template #noContent>
+    <div class="list-base no-content">
+        No Content Found
+    </div>
+</ng-template>

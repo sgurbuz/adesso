@@ -1,0 +1,11 @@
+@import '../../theme/colors';
+
+:host {
+    .page-header {
+        padding: 8px 0;
+        margin: 0 0 16px 0;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.25);
+        font-size: 24px;
+        font-weight: 600;
+    }
+}

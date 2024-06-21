@@ -1,0 +1,67 @@
+<form [formGroup]="filterForm">
+    <div class="filters-base flex flex-column align-items-center gap-4">
+        <div class="filter-ages">
+            <p-selectButton 
+                [options]="ageOptions"
+                formControlName="age"
+                optionLabel="label"
+                optionValue="value"
+                allowEmpty="false"
+            />
+        </div>
+        <div class="filter-costs flex flex-row align-items-center gap-3">
+            <div class="flex flex-row gap-2 align-items-center">
+                <div>
+                    <p-checkbox formControlName="foodEnabled" [binary]="true" inputId="useFoodFilter" />
+                </div>
+                <div class="slider-item flex gap-3 align-items-center{{!filterForm.value.foodEnabled ? ' disabled' : ''}}">
+                    <label for="foodRange">Food:</label>
+                    <p-slider
+                        id="foodRange"
+                        formControlName="food"
+                        [disabled]="!filterForm.value.foodEnabled"
+                        [min]="0"
+                        [max]="200"
+                        [range]="true"
+                        styleClass="w-12rem"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-row gap-2 align-items-center">
+                <div>
+                    <p-checkbox formControlName="woodEnabled" [binary]="true" inputId="useWoodFilter" />
+                </div>
+                <div class="slider-item flex gap-3 align-items-center{{!filterForm.value.woodEnabled ? ' disabled' : ''}}">
+                    <label for="woodRange">Wood:</label>
+                    <p-slider
+                        id="woodRange"
+                        formControlName="wood"
+                        [disabled]="!filterForm.value.woodEnabled"
+                        [min]="0"
+                        [max]="200"
+                        [range]="true"
+                        styleClass="w-12rem"
+                    />
+                </div>
+            </div>
+            <div class="flex flex-row gap-2 align-items-center">
+                <div>
+                    <p-checkbox formControlName="goldEnabled" [binary]="true" inputId="useGoldFilter" />
+                </div>
+                <div class="slider-item flex gap-3 align-items-center{{!filterForm.value.goldEnabled ? ' disabled' : ''}}">
+                    <label for="goldRange">Gold:</label>
+                    <p-slider 
+                        id="goldRange"
+                        formControlName="gold"
+                        [disabled]="!filterForm.value.goldEnabled"
+                        [min]="0"
+                        [max]="200"
+                        [range]="true"
+                        styleClass="w-12rem"
+                    />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
